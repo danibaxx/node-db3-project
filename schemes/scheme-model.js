@@ -34,7 +34,7 @@ async function add(data) {
     .first()
 };
 
-async function update(id, body) {
+async function update(body, id) {
   await db('schemes')
     .where({ id })
     .update(body)
@@ -42,7 +42,7 @@ async function update(id, body) {
   return findById(id)
 };
 
-function remove() {
+function remove(id) {
   return db('schemes')
     .where({ id })
     .del()
